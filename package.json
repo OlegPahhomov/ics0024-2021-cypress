@@ -9,7 +9,7 @@
   "keywords": [],
   "author": "German Mumma",
   "license": "ISC",
-  "devDependencies": {
+  "dependencies": {
     "cypress": "^3.6.0"
   }
 }
