@@ -1,6 +1,7 @@
 # UI Automation with Cypress
 Web Application under test: https://the-internet.herokuapp.com/  
 Framework used: https://docs.cypress.io/guides/getting-started/installing-cypress.html
+Writing your first Cypress test: https://docs.cypress.io/guides/getting-started/writing-your-first-test.html
 
 # Focus
 - Learn alternative to WebDriver: Cypress
