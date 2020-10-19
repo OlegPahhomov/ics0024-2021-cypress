@@ -4,13 +4,13 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "./node_modules/.bin/cypress run"
   },
   "keywords": [],
   "author": "German Mumma",
   "license": "ISC",
   "dependencies": {},
   "devDependencies": {
-    "cypress": "^3.8.3"
+    "cypress": "^5.4.0"
   }
 }

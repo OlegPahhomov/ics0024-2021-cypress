@@ -4,4 +4,4 @@ ui-automation-with-cypress.iml
 
 # Node
 node_modules
-package-lock.json
+cypress/videos
