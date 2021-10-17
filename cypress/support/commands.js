@@ -10,8 +10,8 @@
 //
 //
 // -- This is a parent command --
-Cypress.Commands.add("login", (email, password) => {
-    cy.get('input[name=username]').type(email)
+Cypress.Commands.add("login", (username, password) => {
+    cy.get('input[name=username]').type(username)
 
     // {enter} causes the form to submit
     cy.get('input[name=password]').type(`${password}{enter}`)
