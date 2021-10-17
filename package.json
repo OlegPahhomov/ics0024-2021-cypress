@@ -1,5 +1,5 @@
 {
-  "name": "ui-automation-with-cypress",
+  "name": "ICS0024-2021-cypress",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -7,10 +7,10 @@
     "test": "./node_modules/.bin/cypress run"
   },
   "keywords": [],
-  "author": "German Mumma",
+  "author": "Oleg Pahhomov",
   "license": "ISC",
   "dependencies": {},
   "devDependencies": {
-    "cypress": "^5.4.0"
+    "cypress": "8.6.0"
   }
 }

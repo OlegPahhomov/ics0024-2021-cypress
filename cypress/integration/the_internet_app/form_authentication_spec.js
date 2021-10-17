@@ -4,14 +4,11 @@ describe("Form authentication page", () => {
     });
 
     it('should login to secure area with valid credentials', function () {
-        cy.login("tomsmith", "SuperSecretPassword!");
+        cy.get('input[name=username]').type("tomsmith")
+
+        // {enter} causes the form to submit
+        cy.get('input[name=password]').type(`"SuperSecretPassword!"{enter}`)
 
         cy.get(".flash.success").should("be.visible");
-    });
-
-    it('should not login to secure area with invalid credentials', function () {
-        cy.login("pepsi", "asdsad");
-
-        cy.get(".flash.error").should("be.visible");
     });
 });
