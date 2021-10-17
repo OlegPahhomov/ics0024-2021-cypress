@@ -3,7 +3,7 @@ describe("Home page", () => {
         cy.visit("");
     });
 
-    it('should open home page', function () {
+    it('should open home page', () =>  {
         cy.get("h1").should("have.text", "Welcome to the-internet")
     });
 });

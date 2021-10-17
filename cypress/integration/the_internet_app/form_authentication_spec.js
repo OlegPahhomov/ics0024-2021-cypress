@@ -3,7 +3,7 @@ describe("Form authentication page", () => {
         cy.visit("/login");
     });
 
-    it('should login to secure area with valid credentials', function () {
+    it('should login to secure area with valid credentials',  () => {
         cy.get('input[name=username]').type("tomsmith")
 
         // {enter} causes the form to submit
