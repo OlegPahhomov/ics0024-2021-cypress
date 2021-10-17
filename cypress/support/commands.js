@@ -16,6 +16,12 @@ Cypress.Commands.add("login", (username, password) => {
     // {enter} causes the form to submit
     cy.get('input[name=password]').type(`${password}{enter}`)
 })
+
+Cypress.Commands.add("notificationText", (notification, text) => {
+    cy.get(notification).should("be.visible").should(($div) => {
+        $div.text().includes(text)
+    });
+})
 //
 //
 // -- This is a child command --
