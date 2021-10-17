@@ -7,7 +7,7 @@ describe("Form authentication page", () => {
         cy.get('input[name=username]').type("tomsmith")
 
         // {enter} causes the form to submit
-        cy.get('input[name=password]').type(`"SuperSecretPassword!"{enter}`)
+        cy.get('input[name=password]').type(`SuperSecretPassword!{enter}`)
 
         cy.get(".flash.success").should("be.visible");
     });
