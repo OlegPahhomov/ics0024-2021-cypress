@@ -10,49 +10,32 @@ describe("Form authentication page", () => {
         });
     });
 
-    // 3 tests plz
-    // 1 test
-    // formAuthenticationPage.submitForm("useruser", "SuperSecretPassword!");
-    // username is wronk!!
+    it('should not login to secure area with invalid username',  () => {
+        cy.login("useruser", "SuperSecretPassword!")
+        cy.get(".flash.error").should("be.visible").should(($div) => {
+            $div.text().includes("Your username is invalid!")
+        });
+    });
 
-    // 1 test
-    // formAuthenticationPage.submitForm("tomsmith", "tomsmith");
-    // pwd is wronk!!
+    it('should not login to secure area with invalid password',  () => {
+        cy.login("tomsmith", "tomsmith")
+        cy.get(".flash.error").should("be.visible").should(($div) => {
+            $div.text().includes("Your password is invalid!")
+        });
+    });
 
-    // 1 test
-    // log in like boss
-    // log out, drop the mike, close computer, walk away
-
+    it('should login to secure area with valid credentials and log out',  () => {
+        cy.login("tomsmith", "SuperSecretPassword!")
+        cy.get(".flash.success").should("be.visible").should(($div) => {
+            $div.text().includes("You logged into a secure area!")
+        });
+        cy.get(".button").click()
+        cy.get(".flash.success").should("be.visible").should(($div) => {
+            $div.text().includes("You logged out of the secure area!")
+        });
+        
+    });
+    
     // master skillz next level, level 100+, giga
     // separate function for notification validation
-
-//         formAuthenticationPage.submitForm("useruser", "SuperSecretPassword!");
-// @Test
-//     public void should_not_login_with_invalid_login() {
-//         FormAuthenticationPage formAuthenticationPage = homePage.goToAuthenticationPage();
-//         assertThat(formAuthenticationPage.isAt(), is(true));
-//
-//
-//         assertThat(formAuthenticationPage.isUsernameInvalidMessageDisplayed(), is(true));
-//     }
-//
-// @Test
-//     public void should_not_login_with_invalid_password() {
-//         FormAuthenticationPage formAuthenticationPage = homePage.goToAuthenticationPage();
-//         assertThat(formAuthenticationPage.isAt(), is(true));
-//
-//         formAuthenticationPage.submitForm("tomsmith", "tomsmith");
-//
-//         assertThat(formAuthenticationPage.isPasswordInvalidMessageDisplayed(), is(true));
-//     }
-//
-// @Test
-//     public void should_login_then_logout() {
-//         FormAuthenticationPage formAuthenticationPage = homePage.goToAuthenticationPage();
-//         assertThat(formAuthenticationPage.isAt(), is(true));
-//
-//         formAuthenticationPage.submitForm("tomsmith", "SuperSecretPassword!");
-//         formAuthenticationPage.clickLogout();
-//         assertThat(formAuthenticationPage.isSuccessfullyLoggedOutMessageDisplayed(), is(true));
-//     }
 });
